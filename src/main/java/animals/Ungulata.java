@@ -1,20 +1,11 @@
 package animals;
 
-import enclosure.Aquarium;
-import enclosure.OpenEnclosure;
-
 public class Ungulata extends Animal {
-    public Ungulata(AnimalType animalType, int age, int weight) {
-        super(animalType, age, weight);
+    public Ungulata(AnimalType animalType, String name, int age, int weight) {
+        super(name, animalType, age, weight);
     }
 
-    public Ungulata(int age, int weight) {
-        this(AnimalType.UNGULATA, age, weight);
+    public Ungulata(String name, int age, int weight) {
+        this(AnimalType.UNGULATA, name, age, weight);
     }
-
-    public void checkIn() {
-        this.setEnclosure(new OpenEnclosure());
-        System.out.println(this.getAnimalType() + " размещено в " + this.getEnclosure());
-    }
-
 }

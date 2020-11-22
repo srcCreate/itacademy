@@ -1,14 +1,13 @@
 package animals;
 
-import enclosure.Enclosure;
-
 public abstract class Animal {
+    private final String name;
     private final AnimalType animalType;
     private final int age;
     private final int weight;
-    private Enclosure enclosure;
 
-    Animal(AnimalType animalType, int age, int weight) {
+    Animal(String name, AnimalType animalType, int age, int weight) {
+        this.name = name;
         this.animalType = animalType;
         this.age = age;
         this.weight = weight;
@@ -18,22 +17,10 @@ public abstract class Animal {
         return animalType;
     }
 
-    public Enclosure getEnclosure() {
-        return enclosure;
-    }
-
-    protected void setEnclosure(Enclosure enclosure) {
-        this.enclosure = enclosure;
-    }
-
-    public abstract void checkIn();
-
     @Override
     public String toString() {
-        return animalType +
+        return name +
                 ", вес составляет " + weight + " кг" +
                 ", возраст " + age;
     }
-
-
 }
